@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+<h1>Receipt</h1>
+<div>
+  {% for expense in Expense %}
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <h2>{{ expense.name }}</h2>
+      {% if expense.receipt.url %}
+        <img src="{{ expense.receipt.url }}" alt="Receipt Image" style="width: 100px; height: 100px; margin-left: 20px;">
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

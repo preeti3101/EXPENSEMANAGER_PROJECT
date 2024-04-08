@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+
+{% load crispy_forms_tags %}
+{% block navbar %}
+    
+{% endblock navbar %}
+
+{% block nav %}
+    
+{% endblock nav %}
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+                <div class="card col-lg-4 mx-auto">
+                    <div class="card-body px-5 py-5">
+                     
+                        <form role="form" method="POST">
+                            {% csrf_token %}
+  
+                            <div class="mb-2">
+                              <div class="input-group-prepend bg-transparent">
+                                <i class="mdi mdi-name-outline text-primary"></i>
+                                {{ form.username|as_crispy_field }}
+                              </div>
+                            </div>
+                            
+                            <div class="mb-2">
+                              <div class="input-group-prepend bg-transparent">
+                                <i class="mdi mdi-mail-outline text-primary"></i>
+                                {{ form.email|as_crispy_field }}
+                              </div>
+                            </div>
+                            
+                              <div class="mb-2">
+                                <div class="input-group-prepend bg-transparent">
+                                  <i class="mdi mdi-name-outline text-primary"></i>
+                                  {{ form.age|as_crispy_field }}
+                                </div>
+                              </div>
+                              <div class="mb-2">
+                                <div class="input-group-prepend bg-transparent">
+                                  <i class="mdi mdi-name-outline text-primary"></i>
+                                  {{ form.salary|as_crispy_field }}
+                                </div>
+                              </div>
+                              <div class="mb-2">
+                                <div class="input-group-prepend bg-transparent">
+                                  <i class="mdi mdi-name-outline text-primary"></i>
+                                  {{ form.password1|as_crispy_field }}
+                                </div>
+                                <div class="mb-2">
+                                    <div class="input-group-prepend bg-transparent">
+                                      <i class="mdi mdi-name-outline text-primary"></i>
+                                      {{ form.password2|as_crispy_field }}
+                                    </div>
+                              </div>
+                              <a href="#" class="auth-link text-black">Forgot password?</a>
+                          </div>
+
+                          <div class="my-2">
+                            <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
+                          </div>
+
+                            <p class="sign-up">Don't have an Account?<a href="#"> Sign Up</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+
+
+{% endblock content %}
